@@ -1,4 +1,6 @@
-= Neo Ruby Koans
+= Neo Ruby Koans [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)]
+
+[[https://github.com/BadAllOff/ruby-koans/image/enso.png|alt=rubykoans]]
 
 The Ruby Koans walk you along the path to enlightenment in order to learn Ruby.
 The goal is to learn the Ruby language, syntax, structure, and some common
