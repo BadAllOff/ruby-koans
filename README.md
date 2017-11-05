@@ -1,9 +1,8 @@
 = Neo Ruby Koans 
-[![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)]  
-[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=102)]
+[![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)] [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=102)]
 
 
-[[https://github.com/BadAllOff/ruby-koans/blob/master/image/enso.png|alt=rubykoans]]
+[![RubyKoans](https://github.com/BadAllOff/ruby-koans/blob/master/image/enso.png|alt=rubykoans)]
 
 
 The Ruby Koans walk you along the path to enlightenment in order to learn Ruby.
