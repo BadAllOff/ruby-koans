@@ -3,7 +3,7 @@ require File.expand_path(File.dirname(__FILE__) + '/neo')
 class AboutSymbols < Neo::Koan
   def test_symbols_are_symbols
     symbol = :ruby
-    assert_equal __, symbol.is_a?(Symbol)
+    assert_equal true, symbol.is_a?(Symbol)
   end
 
   def test_symbols_can_be_compared
@@ -11,21 +11,22 @@ class AboutSymbols < Neo::Koan
     symbol2 = :a_symbol
     symbol3 = :something_else
 
-    assert_equal __, symbol1 == symbol2
-    assert_equal __, symbol1 == symbol3
+    assert_equal true, symbol1 == symbol2
+    assert_equal false, symbol1 == symbol3
   end
 
   def test_identical_symbols_are_a_single_internal_object
+    # INTERESTING
     symbol1 = :a_symbol
     symbol2 = :a_symbol
 
-    assert_equal __, symbol1           == symbol2
-    assert_equal __, symbol1.object_id == symbol2.object_id
+    assert_equal true, symbol1           == symbol2
+    assert_equal true, symbol1.object_id == symbol2.object_id
   end
 
   def test_method_names_become_symbols
     symbols_as_strings = Symbol.all_symbols.map { |x| x.to_s }
-    assert_equal __, symbols_as_strings.include?("test_method_names_become_symbols")
+    assert_equal false, symbols_as_strings.include?("test_method_names_become_symbols")
   end
 
   # THINK ABOUT IT:
@@ -33,12 +34,30 @@ class AboutSymbols < Neo::Koan
   # Why do we convert the list of symbols to strings and then compare
   # against the string value rather than against symbols?
 
+=begin
+  
+This has to do with how symbols work. For each symbol, only one of it actually exists. 
+Behind the scenes, a symbol is just a number referred to by a name (starting with a colon). 
+Thus, when comparing the equality of two symbols, 
+you're comparing object identity and not the content of the identifier 
+that refers to this symbol.
+
+If you were to do the simple test :test == "test", it will be false. 
+So, if you were to gather all of the symbols defined thus far into an array, 
+you would need to convert them to strings first before comparing them. 
+You can't do this the opposite way 
+(convert the string you want to compare into a symbol first) 
+because doing that would create the single instance of that symbol 
+and "pollute" your list with the symbol you're testing for existence.
+  
+=end
+
   in_ruby_version("mri") do
     RubyConstant = "What is the sound of one hand clapping?"
     def test_constants_become_symbols
       all_symbols_as_strings = Symbol.all_symbols.map { |x| x.to_s }
 
-      assert_equal __, all_symbols_as_strings.include?(__)
+      assert_equal __, all_symbols_as_strings.include?(RubyConstant)
     end
   end
 
