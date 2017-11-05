@@ -1,6 +1,5 @@
 = Neo Ruby Koans 
-![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg) ![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=102)
-
+![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg) ![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=102) ![forthebadge](http://forthebadge.com/images/badges/fuck-it-ship-it.svg) ![forthebadge](http://forthebadge.com/images/badges/60-percent-of-the-time-works-every-time.svg) ![forthebadge](http://forthebadge.com/images/badges/made-with-ruby.svg)
 
 ![RubyKoans](https://github.com/BadAllOff/ruby-koans/blob/master/image/enso.png)
 
