@@ -31,6 +31,33 @@ require File.expand_path(File.dirname(__FILE__) + '/neo')
 
 def score(dice)
   # You need to write this method
+  result = 0
+
+  # loop through all values and add to hash but only 
+  # once per unique value and have a counter for how many times 
+  # value was found
+  counts = Hash.new 0
+
+  dice.each do |key|
+    counts[key] += 1
+  end
+
+  counts.each do |key, value|
+    # f.e. for [1,1,1,1,1] dice value will be 1 => 5
+    # and it's easy to count that for 
+    # for triplets = 1; which means "there is 1 triplet man!"
+    # and for remainre = 2; which means 
+    # "There is 2 remaining numbers with the same value"
+    # and that will be for each number
+    triplets, remainer = value / 3, value % 3
+
+    #
+    result += (100 * remainer) + (1000 * triplets) if key == 1
+    result += (50 * remainer) + (500 * triplets) if key == 5
+    result += (100 * key) if (key != 1 && key != 5 && value >= 3)
+  end
+
+  result
 end
 
 class AboutScoringProject < Neo::Koan
