@@ -77,6 +77,13 @@ class AboutVariableScope < Neo::Koan
   # Meditate on the following: 
   # What is the difference between a class variable and instance variable?
 
+  # https://stackoverflow.com/questions/3802540/difference-between-class-variables-and-class-instance-variables
+  # Despite their name, class variables aren’t class scoped. 
+  # Rather, they’re class-hierarchy scoped. 
+  # At its simplest, the idea behind a class variable is 
+  # that it provides a storage mechanism that’s shared 
+  # between a class and instances of that class, 
+  # and that’s not visible to any other objects.
   # ------------------------------------------------------
   
   $anywhere = "Anywhere"
@@ -112,3 +119,6 @@ end
 # 
 # What will $anywhere be down here, outside of the scope of the
 # AboutVariableScope class?
+
+# Global variables in Ruby are accessible from anywhere 
+# in the Ruby program, regardless of where they are declared
